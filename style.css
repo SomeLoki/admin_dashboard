@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-weight: inherit;
+}
+
+:root {
+  --sidebar-color: blue;
+  --secondary-text-color: white;
+  --main-text-color: black;
+}
+
+body {
+  box-sizing: border-box;
+  max-height: 100dvw;
+  max-width: 100dvw;
+  display: grid;
+  justify-items: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: 250px 1fr;
+  background-color: yellow; 
+  height: 80dvh;
+  width: 80%;
+}
+
+.navbar {
+  background-color: green;
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+  font-weight: 700px;
+}
+
+.search,
+.dash,
+.greeting,
+.buttons {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search,
+.greeting {
+  padding-left: 1rem;
+}
+
+#search {
+  border-radius: 12px;
+}
+
+.search {
+  grid-template-columns: 50px 1fr;
+}
+
+.dash {
+  grid-template-columns: 30px 60px 1fr;
+  padding-left: 4rem;
+  gap: 1.5rem;
+}
+
+.greeting {
+  grid-template-columns: 75px 1fr;
+}
+
+.greet-user > .greet {
+margin-bottom: 0.5rem;
+}
+
+.buttons {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0px 1rem;
+}
+
+button {
+  border-radius: 1rem;
+  background-color: var(--sidebar-color);
+  color: var(--secondary-text-color);
+  padding: 8px 0px;
+}
+
+.icon {
+  background-color: aquamarine;
+  height: 40px;
+  width: 40px;
+}
+
+.profile-pic {
+  height: 50px;
+  width: 50px;
+  background-color: purple;
+}
+
+.greeting > .profile-pic {
+  height: 75px;
+  width: 75px;
+  background-color: purple;
+}
+
+.sidebar { 
+  background-color: blue;
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.content {
+  background-color: red;
+}
