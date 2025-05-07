@@ -5,14 +5,14 @@
 }
 
 :root {
-  --sidebar-color: blue;
+  --sidebar-color: rgb(7, 139, 196);
   --secondary-text-color: white;
   --main-text-color: black;
 }
 
 body {
   box-sizing: border-box;
-  max-height: 100dvw;
+  max-height: 100dvh;
   max-width: 100dvw;
   display: grid;
   justify-items: center;
@@ -23,8 +23,8 @@ body {
   grid-template-columns: 300px 1fr;
   grid-template-rows: 250px 1fr;
   background-color: yellow; 
-  height: 80dvh;
-  width: 80%;
+  height: 100dvh;
+  width: 100dvw;
 }
 
 .navbar {
@@ -42,7 +42,8 @@ body {
 .search,
 .dash,
 .greeting,
-.buttons {
+.buttons,
+.sidebar {
   display: grid;
   gap: 1rem;
   align-items: center;
@@ -88,13 +89,28 @@ button {
   padding: 8px 0px;
 }
 
+.nav-head,
+.main-nav,
+.sec-nav {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, 1fr);
+  gap: 1rem;
+}
+
+.nav-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
 .icon {
   background-color: aquamarine;
   height: 40px;
   width: 40px;
 }
 
-.profile-pic {
+.profile-pic,
+.logo {
   height: 50px;
   width: 50px;
   background-color: purple;
@@ -107,11 +123,93 @@ button {
 }
 
 .sidebar { 
-  background-color: blue;
+  background-color: var(--sidebar-color);
   grid-column: 1;
   grid-row: 1 / 3;
+  grid-template-rows: 1fr 3fr 2fr 4fr;
 }
 
-.content {
-  background-color: red;
+.user-content {
+  background-color: rgb(198, 211, 227);
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "projects announcements"
+  "projects trending";
+  gap: 1rem;
+}
+
+.projects {
+  display: grid;
+  grid-area: projects;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px repeat(3, 1fr);
+  grid-template-areas: "title title";
+  gap: 1rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 4fr 1fr;
+  grid-template-areas:
+  "card-text card-text"
+  " . card-icons";
+  background-color: var(--secondary-text-color);
+  border-left: 0.4rem solid goldenrod;
+  border-radius: 0.4rem;
+}
+
+.card-text {
+  grid-area: card-text;
+  margin: 2rem 1rem;
+}
+
+.card-icons {
+  grid-area: card-icons;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.title {
+  grid-area: title;
+  align-self: center;
+}
+
+
+.announcements {
+  display: grid;
+  grid-area: announcements;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "title";
+}
+
+.ann-container {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 0.8rem;
+  background-color: var(--secondary-text-color);
+  padding: 1rem 2rem;
+}
+
+.trend-container {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  border-radius: 0.8rem;
+  background-color: var(--secondary-text-color);
+  padding: 1rem 2rem;
+}
+
+.trending {
+  display: grid;
+  grid-area: trending;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: "title";
+}
+
+.trend {
+  display: grid;
+  grid-template-columns: 50px 1fr;
 }
