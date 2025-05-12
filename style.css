@@ -139,6 +139,11 @@ button {
   justify-self: center;
 }
 
+.profile-pic {
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
 .greeting > .profile-pic {
   height: 75px;
   width: 75px;
