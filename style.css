@@ -56,6 +56,13 @@ body {
   padding-left: 1rem;
 }
 
+.navbar,
+.project-card,
+.ann-container,
+.trend-container {
+  box-shadow: 0 4px 0.2rem -2px rgba( 0, 0, 0, 0.3);
+}
+
 #search {
   border-radius: 1rem;
   padding: 0.5rem;
